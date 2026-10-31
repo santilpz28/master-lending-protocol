@@ -10,6 +10,18 @@
 
 ---
 
+<p align="center">
+  <img src="docs/architecture.png" alt="How the protocol works" width="100%">
+</p>
+
+### How the protocol works
+
+A non-custodial lending market where every asset pair has its own supply APY, borrow APY and collateral factor. Users deposit to earn, borrow against their collateral up to that factor, repay partially or fully, and withdraw while their position stays safe. Deposits can be authorised **gasless** with EIP-712 signatures and per-user nonces. When the collateralisation ratio drops below the threshold the position is liquidated. `ReentrancyGuard`, `Pausable` and `Ownable` come from OpenZeppelin, and an owner-controlled recovery path rescues tokens stuck in the contract.
+
+
+
+---
+
 ## 🎯 What it does
 
 A non-custodial lending protocol where users can:
